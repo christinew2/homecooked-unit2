@@ -14,7 +14,7 @@
         <button class="dropdown-button" type="button"><img 
           src="<%= user.profile.avatar %>" 
           alt="<%= user.profile.name %> avatar"
-        ><%=user.profile.name%></button>
+        ><span id="dropdown-username"><%=user.profile.name%></span></button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="/:id/profiles">View Profile</a>
           <a class="dropdown-item" href="/auth/logout">Logout</a>
