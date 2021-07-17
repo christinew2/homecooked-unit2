@@ -4,13 +4,20 @@
 
 <h1>I'M CRAVIN'</h1>
 <section class="cards">
-    <div class="buyer-card">
-        <div class="b-card-header"><b>Dish Name</b></div>
-        <div class="b-card-content">
-            <p><b>Description:</b>BLAH BLAH BLAH asldkjfhasdflkjweoiu mnx,cmvnuwhelaksdf;lkpqpwoielk zlxkcjvkldf Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vel unde exercitationem maxime similique incidunt excepturi corrupti illum quae voluptatem quaerat earum reprehenderit dignissimos tempora architecto deserunt consectetur, quod a.</p>
-            <button type="submit" class="b-card-button">I Can Cook This!</button>
+    <% dishes.forEach(dish => { %>
+        <div class="buyer-card">
+            <div class="b-card-header"><b><%=dish.dishName%></b></div>
+            <div class="b-card-content">
+                <% if (dish.description){ %>
+                    <p>
+                        <b>Description:</b>
+                        <%=dish.description %>
+                    </p>
+                <% } %>
+                <button type="submit" class="b-card-button">I Can Cook This!</button>
+            </div>
         </div>
-    </div>
+    <% }) %> 
 
     <div class="buyer-card">
         <div class="b-card-header"><b>Dish Name</b></div>

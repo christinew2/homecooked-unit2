@@ -33,6 +33,7 @@ const dishSchema = new Schema({
         type: String,
         required: true,
     },
+    description: String,
     minPrice: Number,
     maxPrice: Number,
     whoWants: [{type: Schema.Types.ObjectId, ref: "Profile"}],

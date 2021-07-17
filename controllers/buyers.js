@@ -5,7 +5,7 @@ export {
 }
 
 function index(req,res) {
-    Dish.find({})
+    Dish.find({isBuy:true})
     .then (dishes => {
         res.render("buyers/index", {
             dishes,
