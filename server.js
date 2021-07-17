@@ -22,6 +22,7 @@ import { passUserToView } from './middleware/middleware.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as buyersRouter } from './routes/buyers.js'
+import { router as sellersRouter } from './routes/sellers.js'
 
 // view engine setup
 app.set(
@@ -64,6 +65,7 @@ app.use(passUserToView)
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/buyers', buyersRouter)
+app.use('/sellers', sellersRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

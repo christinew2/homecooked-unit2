@@ -5,15 +5,15 @@ export {
 }
 
 function index(req,res) {
-    Dish.find({isBuy:true})
+    Dish.find({isBuy:false})
     .then (dishes => {
-        res.render("buyers/index", {
+        res.render("sellers/index", {
             dishes,
-            title: "I'm Cravin'!",
+            title: "I'm Cookin'!",
         })
     })
     .catch (err => {
         console.log(err)
-        res.redirect("/buyers")
+        res.redirect("/sellers")
     })
 }
