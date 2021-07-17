@@ -11,7 +11,7 @@ const profileSchema = new mongoose.Schema({
   dishes: [{type: mongoose.Schema.Types.ObjectId, ref: "Dish"}],
   location: String,
 }, {
-  timestamps: true
+  timestamps: true,
 })
 
 const Profile = mongoose.model('Profile', profileSchema)
