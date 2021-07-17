@@ -5,5 +5,15 @@ export {
 }
 
 function index(req,res) {
-    console.log("THIS IS THE INDEX FUNCTION")
+    Dish.find({})
+    .then (dishes => {
+        res.render("dishes/index", {
+            dishes,
+            title: "HERE ARE THE DISHES"
+        })
+    })
+    .catch (err => {
+        console.log(err)
+        res.redirect("/dishes")
+    })
 }
