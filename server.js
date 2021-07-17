@@ -16,6 +16,7 @@ import('./config/database.js')
 
 // load passport
 import('./config/passport.js')
+import { passUserToView } from './middleware/middleware.js'
 
 // require routes
 import { router as indexRouter } from './routes/index.js'
@@ -55,6 +56,9 @@ app.use(
 // passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
+
+// custom middleware - pass user to views
+app.use(passUserToView)
 
 // router middleware
 app.use('/', indexRouter)

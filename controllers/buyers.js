@@ -10,7 +10,6 @@ function index(req,res) {
         res.render("buyers/index", {
             dishes,
             title: "HERE ARE THE DISHES",
-            user: req.user ? req.user : null
         })
     })
     .catch (err => {
