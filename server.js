@@ -21,9 +21,8 @@ import { passUserToView } from './middleware/middleware.js'
 // require routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
-import { router as buyersRouter } from './routes/buyers.js'
-import { router as sellersRouter } from './routes/sellers.js'
-import { router as newDishRouter } from './routes/new.js'
+import { router as dishesRouter } from './routes/dishes.js'
+
 
 // view engine setup
 app.set(
@@ -65,9 +64,7 @@ app.use(passUserToView)
 // router middleware
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
-app.use('/buyers', buyersRouter)
-app.use('/sellers', sellersRouter)
-app.use('/new', newDishRouter)
+app.use('/dishes', dishesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
