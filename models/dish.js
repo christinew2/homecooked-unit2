@@ -37,8 +37,8 @@ const dishSchema = new Schema({
     minPrice: Number,
     maxPrice: Number,
     whoWants: [{type: Schema.Types.ObjectId, ref: "Profile"}],
-    comments: [commentSchema]
-
+    comments: [commentSchema],
+    owners: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
     timestamps: true,
 })

@@ -43,6 +43,7 @@ function newDish(req,res){
 }
 
 function create(req,res){
+    req.body.owner = req.user.profile
     const dish = new Dish(req.body)
     dish.save(function(err){
         if(err){
@@ -54,6 +55,12 @@ function create(req,res){
 }
 
 function show(req,res){
-    console.log("SHOW")
-    // Dish.findById(req.params.id)
+    Dish.findById(req.params.id, function(err, dish){
+        res.render("dishes/show",{
+            title: "Dish Details",
+            err, 
+            dish,
+       })
+   })
 }
+

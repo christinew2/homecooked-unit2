@@ -1,0 +1,30 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<h1>DISH DETAILS</h1>
+
+<div>
+    <img src="<%= user.profile.avatar %>" alt="<%= user.profile.name %> avatar">
+    <span id="dropdown-username"><b><%=user.profile.name%></b>is
+        <%= dish.isBuy ? "CRAVING": "COOKING" %>
+    </span>
+</div>
+
+<h1>I'M COOKIN'</h1>
+<section class="cards">
+    <% dishes.forEach(dish => { %>
+        <div class="buyer-card">
+            <a href="/dishes/<%=dish._id%>" class="dish-link">
+                <div class="b-card-header"><b><%=dish.name%></b></div>
+            </a>
+            <div class="b-card-content">
+                <% if (dish.description){ %>
+                    <p>
+                        <b>Description:</b>
+                        <%=dish.description %>
+                    </p>
+                <% } %>
+                <button type="submit" class="b-card-button">GET IT IN MY TUMMY!</button>
+            </div>
+        </div>
+    <% }) %> 
