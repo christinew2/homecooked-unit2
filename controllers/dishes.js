@@ -42,5 +42,12 @@ function newDish(req,res){
 }
 
 function create(req,res){
-    console.log(req.body)
+    const dish = new Dish(req.body)
+    dish.save(function(err){
+        if(err){
+            console.log(err)
+            return res.redirect("/dishes/new")
+        }
+        res.redirect(`/dishes/${dish._id}`)
+    })
 }
