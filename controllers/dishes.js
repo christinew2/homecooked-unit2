@@ -4,6 +4,7 @@ export {
     buyersIndex,
     sellersIndex,
     newDish as new,
+    create,
 }
 
 function buyersIndex(req,res) {
@@ -38,4 +39,8 @@ function newDish(req,res){
     res.render("dishes/new", {
         title: "Add A Dish!"
     })
+}
+
+function create(req,res){
+    console.log(req.body)
 }

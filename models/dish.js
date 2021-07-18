@@ -29,7 +29,7 @@ const dishSchema = new Schema({
         type: Boolean,
         required: true,
     },
-    dishName: {
+    name: {
         type: String,
         required: true,
     },
