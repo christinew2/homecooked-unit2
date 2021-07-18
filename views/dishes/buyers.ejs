@@ -6,7 +6,9 @@
 <section class="cards">
     <% dishes.forEach(dish => { %>
         <div class="buyer-card">
-            <div class="b-card-header"><b><%=dish.name%></b></div>
+            <a href="/dishes/buyers/<%=dish._id%>" class="dish-link">
+                <div class="b-card-header"><b><%=dish.name%></b></div>
+            </a>    
             <div class="b-card-content">
                 <% if (dish.description){ %>
                     <p>

@@ -14,9 +14,14 @@
     margin: 2vmin 1vmin;
     
 }
+/* 
+.buyer-card:hover {
+    box-shadow: 0 20px 200px 0 rgba(0,0,0,0.2);
+} */
 
-.buyer-card: hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.dish-link {
+    text-decoration: none;
+    color: black;
 }
 
 .b-card-header {
