@@ -5,6 +5,7 @@ export {
     sellersIndex,
     newDish as new,
     create,
+    show,
 }
 
 function buyersIndex(req,res) {
@@ -50,4 +51,9 @@ function create(req,res){
         }
         res.redirect(`/dishes/${dish._id}`)
     })
+}
+
+function show(req,res){
+    console.log("SHOW")
+    // Dish.findById(req.params.id)
 }
