@@ -29,6 +29,15 @@
             </a>    
         <% }) %>
     <% } %>
+    <% if (dish.comments.length > 0){ %>
+        <% dish.comments.forEach(comment => { %>
+            <% if (dish.rating){ %>
+                <p><b>Rating</b><%=comment.rating%></p>
+            <% } %>
+            <p><%=comment.content%></p>
+            <p><b>Posted:</b><%=comment.createdAt%></p>
+        <% }) %>
+    <% } %>
 </section>
 
 
