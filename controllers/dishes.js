@@ -35,5 +35,7 @@ function sellersIndex(req,res) {
 }
 
 function newDish(req,res){
-    console.log("HELLO")
+    res.render("dishes/new", {
+        title: "Add A Dish!"
+    })
 }
