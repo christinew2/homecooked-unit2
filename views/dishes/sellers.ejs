@@ -6,7 +6,7 @@
 <section class="cards">
     <% dishes.forEach(dish => { %>
         <div class="buyer-card">
-            <a href="/dishes/sellers/<%=dish._id%>" class="dish-link">
+            <a href="/dishes/<%=dish._id%>" class="dish-link">
                 <div class="b-card-header"><b><%=dish.name%></b></div>
             </a>
             <div class="b-card-content">
