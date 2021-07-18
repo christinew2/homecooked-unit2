@@ -11,6 +11,6 @@ const router = Router()
 router.get("/buyers", dishesCtrl.buyersIndex)
 router.get("/sellers", dishesCtrl.sellersIndex)
 router.get("/new", isLoggedIn, dishesCtrl.new)
-router.get("/:id", dishesCtrl.show)
+router.get("/:id", isLoggedIn, dishesCtrl.show)
 
 router.post("/", dishesCtrl.create)
