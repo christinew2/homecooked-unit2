@@ -55,12 +55,17 @@ function create(req,res){
 }
 
 function show(req,res){
-    Dish.findById(req.params.id, function(err, dish){
-        res.render("dishes/show",{
+    Dish.findById(req.params.id)
+    .populate("owner")
+    .then (dish => {
+        res.render("dishes/show", {
             title: "Dish Details",
-            err, 
             dish,
        })
+   })
+   .catch(err => {
+       console.log(err)
+       res.redirect("/")
    })
 }
 
