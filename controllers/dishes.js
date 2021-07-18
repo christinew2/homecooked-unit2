@@ -9,28 +9,28 @@ export {
 function buyersIndex(req,res) {
     Dish.find({isBuy:true})
     .then (dishes => {
-        res.render("buyers/index", {
+        res.render("dishes/buyers", {
             dishes,
             title: "I'm Cravin'!",
         })
     })
     .catch (err => {
         console.log(err)
-        res.redirect("/buyers")
+        res.redirect("/dishes/buyers")
     })
 }
 
 function sellersIndex(req,res) {
     Dish.find({isBuy:false})
     .then (dishes => {
-        res.render("sellers/index", {
+        res.render("dishes/sellers", {
             dishes,
             title: "I'm Cookin'!",
         })
     })
     .catch (err => {
         console.log(err)
-        res.redirect("/sellers")
+        res.redirect("/dishes/sellers")
     })
 }
 
