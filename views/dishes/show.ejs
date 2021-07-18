@@ -23,7 +23,12 @@
         </div>
     <% } %>
     <% if (dish.whoWants.length > 0){ %>
-        <% dish.whoWants.forEach()
+        <% dish.whoWants.forEach(dish => { %>
+            <a href="/profile/<%=dish.owner._id%>">
+                <img id="user-img" src="<%= dish.owner.avatar%>" alt="<%= dish.owner.name %> avatar">
+            </a>    
+        <% }) %>
+    <% } %>
 </section>
 
 
