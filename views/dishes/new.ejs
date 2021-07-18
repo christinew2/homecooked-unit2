@@ -5,13 +5,22 @@
 <main>
   <h1>New Dish Page! [Add roles to all views]</h1>
   <form action="/dishes" method="POST" class="new-dish-form" role="form">
-    <div class="button-group" role="button">
+    <!-- <div class="button-group" role="button">
       <input type="radio" class="radio-button" id="radio-button1" autocomplete="off" checked>
-      <label for="radio-button1">I'M CRAVING IT</label>
+      <label class="button" for="radio-button1">I'M CRAVING IT</label>
 
       <input type="radio" class="radio-button" id="radio-button2" autocomplete="off">
-      <label for="radio-button2">I'M COOKING IT</label>
+      <label class="button" for="radio-button2">I'M COOKING IT</label>
+    </div> -->
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="btnradio1">I'M CRAVING IT</label>
 
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio2">I'M COOKING IT</label>
+    </div>
+
+    
   </form>
 </main>
 
@@ -20,13 +29,3 @@
 
 
 
-<!-- <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-  <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
-
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
-
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-  <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
-</div> -->
