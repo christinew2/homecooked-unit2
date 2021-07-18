@@ -14,3 +14,4 @@ router.get("/new", isLoggedIn, dishesCtrl.new)
 router.get("/:id", isLoggedIn, dishesCtrl.show)
 
 router.post("/", dishesCtrl.create)
+router.post("/:id/comments", dishesCtrl.createComment)

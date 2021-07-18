@@ -6,6 +6,7 @@ export {
     newDish as new,
     create,
     show,
+    createComment,
 }
 
 function buyersIndex(req,res) {
@@ -57,6 +58,7 @@ function create(req,res){
 function show(req,res){
     Dish.findById(req.params.id)
     .populate("owner")
+    .populate("comments.author")
     .then (dish => {
         res.render("dishes/show", {
             title: "Dish Details",
@@ -69,3 +71,12 @@ function show(req,res){
    })
 }
 
+function createComment(req,res){
+    Dish.findById(req.params.id, function(err, dish){
+        req.body.author = req.user.profile
+        dish.comments.push(req.body)
+        dish.save(function(err){
+            res.redirect(`/dishes/${dish._id}`)
+        })
+    })
+}

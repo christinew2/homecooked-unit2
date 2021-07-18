@@ -30,12 +30,19 @@
         <% }) %>
     <% } %>
     <% if (dish.comments.length > 0){ %>
+        <h3>Comments:</h3>
         <% dish.comments.forEach(comment => { %>
-            <% if (dish.rating){ %>
-                <p><b>Rating</b><%=comment.rating%></p>
-            <% } %>
-            <p><%=comment.content%></p>
-            <p><b>Posted:</b><%=comment.createdAt%></p>
+            <div>
+                <div>
+                    <img id="user-img" src="<%= comment.author.avatar%>" alt="<%= comment.author.name %> avatar">
+                    <span id="dropdown-username"><b>Posted by:</b><%=comment.author.name%></span>
+                </div>
+                <% if (comment.rating){ %>
+                    <p><b>Rating: </b><%=comment.rating%></p>
+                <% } %>
+                
+                <p><b>Posted:</b><%=comment.createdAt%></p>
+            </div>
         <% }) %>
     <% } %>
 </section><br>
