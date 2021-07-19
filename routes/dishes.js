@@ -20,3 +20,5 @@ router.post("/", dishesCtrl.create)
 router.post("/:id/comments", dishesCtrl.createComment)
 
 router.put("/:id", isLoggedIn, dishesCtrl.update)
+
+router.delete("/:id", isLoggedIn, dishesCtrl.delete)

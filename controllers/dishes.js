@@ -9,6 +9,7 @@ export {
     createComment,
     edit,
     update,
+    deleteDish as delete,
 }
 
 function buyersIndex(req,res) {
@@ -113,5 +114,23 @@ function update(req, res){
     .catch(err => {
         console.log(err)
         res.redirect(`/`)
+    })
+}
+
+function deleteDish(req,res){
+    Dish.findById(req.params.id)
+    .then(dish => {
+        if (dish.owner.equals(req.user.profile._id)){
+            dish.delete()
+            .then(() =>{
+                res.redirect("/")
+            })
+        } else {
+            throw new Error("NOT AUTHORIZED")
+        }
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/")
     })
 }
