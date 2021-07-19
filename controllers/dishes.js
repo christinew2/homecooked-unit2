@@ -10,6 +10,7 @@ export {
     edit,
     update,
     deleteDish as delete,
+    updateInterest,
 }
 
 function buyersIndex(req,res) {
@@ -132,5 +133,18 @@ function deleteDish(req,res){
     .catch(err => {
         console.log(err)
         res.redirect("/")
+    })
+}
+
+function updateInterest(req,res){
+    Dish.findById(req.params.id, function(err, dish){
+        dish.whoWants.push(req.user.profile)
+        dish.save(function(err){
+            if (dish.isBuy){
+                res.redirect("/dishes/buyers")
+            } else {
+                res.redirect("/dishes/sellers")
+            }
+        })
     })
 }
