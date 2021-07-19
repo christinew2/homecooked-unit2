@@ -1,4 +1,5 @@
 import { Dish } from "../models/dish.js"
+import { Profile } from "../models/profile.js"
 
 export {
     buyersIndex,
@@ -50,13 +51,21 @@ function newDish(req,res){
 function create(req,res){
     req.body.owner = req.user.profile
     const dish = new Dish(req.body)
+
+
+    // also need to save dish to user profile
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+        profile.dishes.push(dish)
+        profile.save()
+    })
     dish.save(function(err){
         if(err){
             console.log(err)
             return res.redirect("/dishes/new")
         }
         res.redirect(`/dishes/${dish._id}`)
-    })
+    })    
 }
 
 function show(req,res){

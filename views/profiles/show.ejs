@@ -2,14 +2,36 @@
 <%- include('../partials/nav') %>
 
 
-  <h1>HELLO, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
+<h1><%= isSelf ? self.name : profile.name %>'s Profile!</h1>
+<% if (profile.avatar) { %>
     <div>
-      <img 
-        src="<%= user.profile.avatar %>" 
-        alt="<%= user.profile.name %> avatar"
-      >
+        <img 
+        src="<%= profile.avatar %>" 
+        alt="<%= profile.name %> avatar"
+        >
     </div>
-  <% } %>
+<% } %>
+
+<h2>Cravings Posts: </h2><br>
+<% profile.dishes.forEach(dish => { %>
+    <% if (dish.isBuy){ %>
+        <div class="dish-card">
+            <a href="/dishes/<%=dish._id%>" class="dish-link">
+                <div class="dish-card-name"><b><%=dish.name%></b></div>
+            </a> 
+        </div>
+    <% } %>
+<% }) %>
+
+<h2>Cooking Posts: </h2><br>
+<% profile.dishes.forEach(dish => { %>
+    <% if (!dish.isBuy){ %>
+        <div class="dish-card">
+            <a href="/dishes/<%=dish._id%>" class="dish-link">
+                <div class="dish-card-name"><b><%=dish.name%></b></div>
+            </a> 
+        </div>
+    <% } %>
+<% }) %>
 
 <%- include('../partials/footer') %>
