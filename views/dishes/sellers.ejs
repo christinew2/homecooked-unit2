@@ -16,7 +16,17 @@
                         <%=dish.description %>
                     </p>
                 <% } %>
-                <button type="submit" class="b-card-button">GET IT IN MY TUMMY!</button>
+                
+                <% if (!dish.owner.equals(user?.profile._id)) { %>
+                    <form action="/dishes/<%=dish._id%>/interest" method="POST">
+                        <% if (dish.isBuy){ %>
+                            <button type="submit" class="b-card-button">I Can Cook This!</button>
+                        <% } else { %>
+                            <button type="submit" class="b-card-button">Let Me Eat This!</button>
+                        <% } %>
+                    </form>
+                <% } %>
+
             </div>
         </div>
     <% }) %> 
