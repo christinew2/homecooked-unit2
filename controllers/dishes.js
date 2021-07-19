@@ -7,6 +7,7 @@ export {
     create,
     show,
     createComment,
+    edit,
 }
 
 function buyersIndex(req,res) {
@@ -78,5 +79,19 @@ function createComment(req,res){
         dish.save(function(err){
             res.redirect(`/dishes/${dish._id}`)
         })
+    })
+}
+
+function edit(req, res){
+    Dish.findById(req.params.id)
+    .then(dish => {
+        res.render("dishes/edit", {
+            dish, 
+            title: "Edit Dish"
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/")
     })
 }

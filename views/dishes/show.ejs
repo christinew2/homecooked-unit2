@@ -29,6 +29,11 @@
             </a>    
         <% }) %>
     <% } %>
+    <% if (dish.owner.equals(user?.profile._id)) { %>
+        <a href="/dishes/<%=dish._id%>/edit">Edit This Dish!</a>
+    <% } %>
+
+
     <% if (dish.comments.length > 0){ %>
         <h3>Comments:</h3>
         <% dish.comments.forEach(comment => { %>
@@ -43,7 +48,7 @@
                 <% if (comment.rating){ %>
                     <p><b>Rating: </b><%=comment.rating%></p>
                 <% } %>
-                
+                <p><b>Comment: </b><%=comment.content%></p>
             </div>
         <% }) %>
     <% } %>
