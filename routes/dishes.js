@@ -11,8 +11,6 @@ const router = Router()
 router.get("/buyers", dishesCtrl.buyersIndex)
 router.get("/sellers", dishesCtrl.sellersIndex)
 router.get("/new", isLoggedIn, dishesCtrl.new)
-
-// THIS WORKS BUT HOW?
 router.get("/:id", isLoggedIn, dishesCtrl.show)
 router.get("/:id/edit", isLoggedIn, dishesCtrl.edit)
 

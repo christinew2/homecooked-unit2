@@ -25,7 +25,7 @@
     <% if (dish.whoWants.length > 0){ %>
         <h3> WHO EXPRESSED INTEREST: </h3>
         <% dish.whoWants.forEach(wanter => { %>
-            <a href="/profile/<%=wanter._id%>">
+            <a href="/profiles/<%=wanter._id%>">
                 <img id="user-img" src="<%= wanter.avatar%>" alt="<%= wanter.name %> avatar">
             </a>    
         <% }) %>
@@ -92,5 +92,6 @@
     </section>
 <% } %>
 
+<%- include('../partials/footer') %>
 
 

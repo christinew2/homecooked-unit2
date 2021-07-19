@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import passport from 'passport'
+import { path } from "../middleware/middleware.js"
 
 export {
   router
