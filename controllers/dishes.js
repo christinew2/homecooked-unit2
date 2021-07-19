@@ -139,13 +139,22 @@ function deleteDish(req,res){
 
 function updateInterest(req,res){
     Dish.findById(req.params.id, function(err, dish){
-        dish.whoWants.push(req.user.profile)
-        dish.save(function(err){
-            if (dish.isBuy){
-                res.redirect("/dishes/buyers")
-            } else {
-                res.redirect("/dishes/sellers")
-            }
+        let isInArray = dish.whoWants.some(wanter => {
+            // UNDERSTAND WHAT ARRAY.SOME DOES!!
+            return wanter.equals(req.user.profile._id)
         })
+        if (!isInArray){
+            dish.whoWants.push(req.user.profile)
+            dish.save(function(err){
+                if (dish.isBuy){
+                    res.redirect("/dishes/buyers")
+                } else {
+                    res.redirect("/dishes/sellers")
+                }
+            })
+        } else{
+            // FIGURE OUT WHAT ERROR OR REDIRECT TO PUT HERE
+            console.log("ALREADY IN WANTS")    
+        }
     })
 }
