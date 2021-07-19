@@ -23,9 +23,10 @@
         </div>
     <% } %>
     <% if (dish.whoWants.length > 0){ %>
-        <% dish.whoWants.forEach(dish => { %>
-            <a href="/profile/<%=dish.owner._id%>">
-                <img id="user-img" src="<%= dish.owner.avatar%>" alt="<%= dish.owner.name %> avatar">
+        <h3> WHO EXPRESSED INTEREST: </h3>
+        <% dish.whoWants.forEach(wanter => { %>
+            <a href="/profile/<%=wanter._id%>">
+                <img id="user-img" src="<%= wanter.avatar%>" alt="<%= wanter.name %> avatar">
             </a>    
         <% }) %>
     <% } %>

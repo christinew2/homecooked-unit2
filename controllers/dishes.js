@@ -63,6 +63,7 @@ function show(req,res){
     Dish.findById(req.params.id)
     .populate("owner")
     .populate("comments.author")
+    .populate("whoWants")
     .then (dish => {
         res.render("dishes/show", {
             title: "Dish Details",
