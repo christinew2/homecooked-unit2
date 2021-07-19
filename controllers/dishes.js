@@ -8,6 +8,7 @@ export {
     show,
     createComment,
     edit,
+    update,
 }
 
 function buyersIndex(req,res) {
@@ -93,5 +94,24 @@ function edit(req, res){
     .catch(err => {
         console.log(err)
         res.redirect("/")
+    })
+}
+
+function update(req, res){
+    Dish.findById(req.params.id)
+    .then(dish => {
+        if (dish.owner.equals(req.user.profile._id)){
+            dish.update(req.body, {new: true})
+            .then(dish => {
+                console.log(dish)
+                res.redirect(`/dishes/${dish._id}`)
+            })
+        } else {
+            throw new Error("NOT AUTHORIZED")
+        }
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect(`/`)
     })
 }
