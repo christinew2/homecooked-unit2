@@ -5,28 +5,36 @@
 </head>
 <body>
   <nav>
-    <a href="/">Homecooked</a>
-    <a href="/dishes/buyers">I'm Cravin'</a>
-    <a href="/dishes/sellers">I'm Cookin'</a>
-    <a href="/dishes/new">Add A Dish</a>
-
-    <% if (user) { %>
-      <div class="dropdown">
-        <button class="dropdown-button" type="button">
-          <img src="<%= user.profile.avatar %>" alt="<%= user.profile.name %> avatar">
-          <span id="dropdown-username"><%=user.profile.name%></span>
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="/:id/profiles">View Profile</a>
-          <a class="dropdown-item" href="/auth/logout">Logout</a>
-        <div>
-      </div>
-  
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
+    <div id="left-nav">
+      
+      <a href="/">
+        <img id="home-img" src="/images/apron.png"> HomeCooked
       </a>
-    <% } %>
+
+    </div>
+    <div id="right-nav"> 
+      <a class="nav-tab" href="/dishes/buyers">I'm Cravin'</a>
+      <a class="nav-tab" href="/dishes/sellers">I'm Cookin'</a>
+      <a class="nav-tab" href="/dishes/new">Add A Dish</a>
+  
+      <% if (user) { %>
+        <div class="dropdown">
+          <button class="dropdown-button" type="button">
+            <img src="<%= user.profile.avatar %>" alt="<%= user.profile.name %> avatar">
+            <span id="dropdown-username"><%=user.profile.name%></span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/:id/profiles">View Profile</a>
+            <a class="dropdown-item" href="/auth/logout">Logout</a>
+          <div>
+        </div>
+    
+      <% } else { %>
+        <a href="/auth/google" class="siwg-link">
+          <button type="submit" class="siwg">
+            <img id="siwg-image" alt="Sign in with Google" />
+          </button>
+        </a>
+      <% } %>
+    </div>
   </nav>

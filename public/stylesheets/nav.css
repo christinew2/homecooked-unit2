@@ -1,3 +1,37 @@
+nav {
+    background-color: #FFEECA;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#left-nav > a {
+    text-decoration: none;
+    font-size: xx-large;
+    color: black;
+}
+
+#home-img {
+    width: 10vmin;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 195, 85);
+}
+
+#right-nav > a{
+    text-decoration: none;
+    font-size: large;
+    height: 8vmin;
+    line-height: 8vmin;
+    color: black;    
+}
+.nav-tab {
+    border: 1px solid rgb(255, 195, 85);
+
+}
+
+
+
+
 /* Dropdown Button */
 .dropdown-button {
     background-color: #04AA6D;
