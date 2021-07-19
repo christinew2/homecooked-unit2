@@ -59,27 +59,35 @@
         <% }) %>
     <% } %>
 </section><br>
-<section>
-    <h3>Add a Comment</h3>
-    <form 
-        id="add-comment-form"
-        action="/dishes/<%= dish._id %>/comments"
-        method="POST"
-    >
-        <label for="rating-select">Rating:</label>
-        <select name="rating" id="rating-select">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5" selected>5</option>
-        </select><br>
-        <label for="review-text">Comment:</label>
-        <textarea name="content" id="review-text"></textarea><br>
-        <button type="submit">Add Comment</button>
-    </form>
-</section>
+<% if (!dish.owner.equals(user?.profile._id)) { %>
+<!-- don't allow dish owner to add comments to own dish? -->
+    <% if (dish.isBuy){ %>
+        <button type="submit" class="b-card-button">I Can Cook This!</button>
+    <% } else { %>
+        <button type="submit" class="b-card-button">Let Me Eat This!</button>
+    <% } %>
 
+    <section>
+        <h3>Add a Comment</h3>
+        <form 
+            id="add-comment-form"
+            action="/dishes/<%= dish._id %>/comments"
+            method="POST"
+        >
+            <label for="rating-select">Rating:</label>
+            <select name="rating" id="rating-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+            </select><br>
+            <label for="review-text">Comment:</label>
+            <textarea name="content" id="review-text"></textarea><br>
+            <button type="submit">Add Comment</button>
+        </form>
+    </section>
+<% } %>
 
 
 
