@@ -1,24 +1,24 @@
-<%- include('./partials/html-head') %>
-
+<% if (!user) { %>
+    <link rel="stylesheet" href="/stylesheets/siwg.css">
+<% } %>
 <link rel="stylesheet" href="/stylesheets/welcome.css">
+</head>
 
 </head>
 
 <body>
     <div class="grid-container">
         <div class="welcome-apron">
-            <img src="/images/Circle.png">
+            <img src="/public/images/apron.png">
         </div>
         <div class="welcome-header">
-            <h1>Welcome!</h1>
+            <h1>WELCOME</h1>
         </div>
         <div class="welcome-info">
-            <p>Something something the taste of home so nice, so lovely. Get authentic food, ya know.</p>
+            <p>Have you ever just wanted the taste of home-sweet-home, but.. idk</p>
         </div>
         <div class="enter-buttons">
             <a href="../dishes/buyers.ejs">Explore the Cravings!</a>
             <a href="../dishes/sellers.ejs">Check Out the HomeCooked Meals!</a>
         </div>
     </div>
-
-    <%- include('./partials/footer') %>

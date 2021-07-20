@@ -1,0 +1,80 @@
+body {
+    background-image: url("/images/welcomebg.png");
+    height: 100%;
+
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: [col0] 10% [col1] 25% [col2] 10% [col3] 10% [col4] 20% [col5] 15% [col6] 15%;
+    grid-template-rows: [row0] 20% [row1] 15% [row2] 40% [row3] 5% [row4] 20%;
+    gap: 0px 0px;
+    /* background-color: #FFF8EC; */
+    height: 100vh;
+
+}
+
+.welcome-apron {
+    grid-area: row1 / col1 / row3 / col3;
+
+}
+.welcome-apron > img { 
+    max-width: 100%; 
+    height: auto; 
+    align-self: center;
+}
+
+.welcome-header {
+    grid-area: row1 / col2 / row2 / col6;
+}
+
+.welcome-header > h1 {
+    font-family: 'Sriracha', cursive;
+    max-width: 100%;
+    max-height: 100%;
+    font-size: 9vw;
+    text-align: center;
+    color: #fbb540;
+    text-shadow:0.5vmin 0.5vmin #A88759;
+    padding: 0 15vmin;
+
+}
+
+.welcome-info {
+    grid-area: row2 / col3 / row3 / col6;
+    align-self: center;
+    justify-self: left;
+}
+
+.welcome-info > p {
+    font-family: "Sriracha", cursive;
+    font-size: 2vw;
+    text-align: left;
+    padding: 0 3vmin;
+    color: #A86E5A;
+}
+
+.enter-buttons {
+    grid-area: row3 / col3 / row4 / col6;
+}
+
+.enter-buttons > a {
+    font-family: "Sriracha", cursive;
+    font-size: 1.5vw;
+    text-decoration: none;
+    color: #8b5340;
+    background-color: #00DFA4; 
+    border: 1vmin solid #00DFA4;
+    border-radius: 10%;
+    margin: 0 1vmin;
+    
+}
+
+.enter-buttons > a:hover {
+    background-color: #ffc259; 
+    border: 1vmin solid #ffc259;
+}
