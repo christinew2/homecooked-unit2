@@ -1,8 +1,8 @@
 body {
-    background-image: url("/images/welcomebg.png");
+    background-image: url("/images/homecookedbg.png");
     height: 100%;
 
-    background-position: left;
+    background-position: 0% 30%;
     background-repeat: no-repeat;
     background-size: cover;
 
