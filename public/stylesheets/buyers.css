@@ -1,0 +1,47 @@
+body {
+    background-image: url("/images/buyers.png");
+    height: 100%;
+    width: auto;
+
+    background-position: 0% 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+.buyer-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 45vmin;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 1vmin 0.5vmin;
+    margin: 2vmin 1vmin;
+    
+}
+/* 
+.buyer-card:hover {
+    box-shadow: 0 20px 200px 0 rgba(0,0,0,0.2);
+} */
+
+.dish-link {
+    text-decoration: none;
+    color: black;
+}
+
+.b-card-header {
+    padding: 2px 16px;
+    font-size: 3vmin;
+}
+
+.b-card-content {
+    padding: 2px 16px;
+    font-size: 2vmin;
+    
+}

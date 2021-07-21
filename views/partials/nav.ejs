@@ -8,7 +8,7 @@
     <div id="left-nav">
       
       <a href="/">
-        <img id="home-img" src="/images/apron.png"> HomeCooked
+        <img id="home-img" src="/images/logo.png"><span id="header-home"> Home</span><span id="header-cooked">Cooked</span>
       </a>
 
     </div>
@@ -24,7 +24,7 @@
             <span id="dropdown-username"><%=user.profile.name%></span>
           </button>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="/profiles/<%= user.profile.avatar %>">View Profile</a>
+            <a class="dropdown-item" href="/profiles/<%= user.profile._id%>">View Profile</a>
             <a class="dropdown-item" href="/auth/logout">Logout</a>
           <div>
         </div>
