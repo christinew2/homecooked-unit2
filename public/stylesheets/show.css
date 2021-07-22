@@ -10,16 +10,22 @@ main {
     display: flex;
     flex-direction: column;
     
-    font-size: 2.3vmin;
+    font-size: 2vmin;
     background-color: rgba(255, 255, 255, 0.7);
     width: 80%;
+    height: 80%;
     margin: 3vmin auto 0 auto;
     padding: 1vmin;
     border-radius: 7px;
+    
 }
 
 #page-start {
-    margin: 4vmin 0 0 0;
+    margin: 3.5vmin 0 0 0;
+}
+
+#dish-name {
+    font-size: 5vmin;
 }
 
 #user-link {
@@ -40,6 +46,8 @@ main {
 
 .dish-content {
     margin: 1vmin 2vmin 2vmin 2vmin;
+    height: 45vmin;
+    overflow-y: auto;
 }
 
 #dish-description {
@@ -79,7 +87,7 @@ main {
     font-size: 2vmin;
 }
 
-#add-comment-form > button {
+button {
     border: 3px solid rgb(247, 223, 173);
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px rgb(247, 223, 173);

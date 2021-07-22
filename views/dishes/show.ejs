@@ -1,7 +1,7 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<link rel="stylesheet" href="/stylesheets/cards.css">
+<!-- <link rel="stylesheet" href="/stylesheets/cards.css"> -->
 <link rel="stylesheet" href="/stylesheets/show.css">
 
 
@@ -11,9 +11,9 @@
         <a id="user-link" href="/profiles/<%=dish.owner._id%>"><b><%=dish.owner.name%></b></a>
         <%= dish.isBuy ? " is CRAVING": " is COOKING" %></p>
     </div>
-    <h1><%=dish.name%></h1>
+    <h1 id="dish-name"><%=dish.name%></h1>
 
-<section class="dish-content">
+<div class="dish-content">
     <% if (dish.description){ %>
         <div>
             <h3 id="dish-description">Dish Description:</h3>
@@ -26,6 +26,20 @@
             <p>$<%=dish.minPrice%> - $<%=dish.maxPrice%></p>
         </div>
     <% } %>
+    <% if (!dish.owner.equals(user?.profile._id)) { %>
+        <% let isInArray = dish.whoWants.some(wanter => { %>
+           <% return wanter.equals(user.profile._id) %>
+        <% }) %>
+        <% if (!isInArray){ %>
+            <form action="/dishes/<%=dish._id%>/interest" method="POST">
+                <% if (dish.isBuy){ %>
+                    <button type="submit" class="card-button">I Can Cook This!</button>
+                <% } else { %>
+                    <button type="submit" class="card-button">Let Me Eat This!</button>
+                <% } %>
+            </form>
+        <% } %>    
+    <% } %>  
     <% if (dish.whoWants.length > 0){ %>
         <h3 id="dish-description">Interested Friends:</h3>
         <% dish.whoWants.forEach(wanter => { %>
@@ -63,21 +77,8 @@
         <% }) %>
         </div>
     <% } %>
-</section>
+
 <% if (!dish.owner.equals(user?.profile._id)) { %>
-    <% let isInArray = dish.whoWants.some(wanter => { %>
-       <% return wanter.equals(user.profile._id) %>
-    <% }) %>
-    <% if (!isInArray){ %>
-        <form action="/dishes/<%=dish._id%>/interest" method="POST">
-            <% if (dish.isBuy){ %>
-                <button type="submit" class="card-button">I Can Cook This!</button>
-            <% } else { %>
-                <button type="submit" class="card-button">Let Me Eat This!</button>
-            <% } %>
-        </form>
-    <% } %>    
-                
     <section id="comment-form-container">
         <h3 id="dish-description">Add a Comment</h3>
         <form 
@@ -99,6 +100,7 @@
         </form>
     </section>
 <% } %>
+
 </main>
 
 <%- include('../partials/footer') %>
