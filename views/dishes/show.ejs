@@ -62,14 +62,18 @@
     <% } %>
 </section><br>
 <% if (!dish.owner.equals(user?.profile._id)) { %>
-<!-- don't allow dish owner to add comments to own dish? -->
-    <form action="/dishes/<%=dish._id%>/interest" method="POST">
-        <% if (dish.isBuy){ %>
-            <button type="submit" class="b-card-button">I Can Cook This!</button>
-        <% } else { %>
-            <button type="submit" class="b-card-button">Let Me Eat This!</button>
-        <% } %>
-    </form>
+    <% let isInArray = dish.whoWants.some(wanter => { %>
+       <% return wanter.equals(user.profile._id) %>
+    <% }) %>
+    <% if (!isInArray){ %>
+        <form action="/dishes/<%=dish._id%>/interest" method="POST">
+            <% if (dish.isBuy){ %>
+                <button type="submit" class="b-card-button">I Can Cook This!</button>
+            <% } else { %>
+                <button type="submit" class="b-card-button">Let Me Eat This!</button>
+            <% } %>
+        </form>
+    <% } %>    
                 
     <section>
         <h3>Add a Comment</h3>
