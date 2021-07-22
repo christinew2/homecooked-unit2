@@ -15,6 +15,7 @@ main {
     width: 80%;
     margin: 3vmin auto 0 auto;
     padding: 1vmin;
+    border-radius: 7px;
 }
 
 #page-start {
@@ -54,7 +55,7 @@ main {
 .comment-container {
     display: flex;
     flex-direction: row;
-    border: 2px solid rgb(250, 199, 89);
+    border: 0.5vmin solid rgb(247, 223, 173);
     border-radius: 7px;
     padding: 0.5vmin;
     margin: 1vmin;
@@ -66,6 +67,24 @@ main {
 .comment-content > p{
     font-size: 1.5vmin;
     margin: 0;
+}
+#comment-form-container {
+    text-align: center;
+}
+
+#add-comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2vmin;
+}
+
+#add-comment-form > button {
+    border: 3px solid rgb(247, 223, 173);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px rgb(247, 223, 173);
+    border-radius: 7px;
+    margin: 1vmin 0 0 0;
 }
 
 
