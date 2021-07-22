@@ -156,9 +156,9 @@ function updateInterest(req,res){
             dish.whoWants.push(req.user.profile)
             dish.save(function(err){
                 if (dish.isBuy){
-                    res.redirect("/dishes/buyers")
+                    res.redirect(`/dishes/${dish._id}`)
                 } else {
-                    res.redirect("/dishes/sellers")
+                    res.redirect(`/dishes/${dish._id}`)
                 }
             })
         } else{
