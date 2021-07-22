@@ -4,7 +4,7 @@
 
 
 <main>
-    <h1><%=dish.name%></h1>
+    <h1 class="page-title"><%=dish.name%></h1>
     <div>
         <img id="user-img" src="<%= dish.owner.avatar%>" alt="<%= dish.owner.name %> avatar">
         <span id="dropdown-username"><b><%=dish.owner.name%></b><%= dish.isBuy ? " is CRAVING": " is COOKING" %></span>

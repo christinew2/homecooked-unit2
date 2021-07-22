@@ -35,4 +35,7 @@ main {
 
 .page-title {
   text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 4vmin;
+  margin: 3vmin 0 2vmin 0;
 }

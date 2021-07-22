@@ -1,11 +1,8 @@
-.page-title {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 4vmin;
-    margin: 3vmin 0 2vmin 0;
-}
+
 .cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .buyer-card {
     position: relative;
@@ -46,10 +43,9 @@
     border: 3px solid rgb(247, 223, 173);
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px rgb(247, 223, 173);
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .card-button:hover{
     color: rgb(243, 197, 98);
-    
 }

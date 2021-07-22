@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/stylesheets/new.css">
 
 <main>
-  <h1>New Dish Page! [Add roles to all views]</h1>
+  <h1 class="page-title">New Dish Page!</h1>
   <form action="/dishes" method="POST" class="new-dish-form" role="form">
     <input type="text" name="isActive" value="true" hidden>
     <input type="text" name="owner" value="true" hidden>
@@ -22,7 +22,7 @@
       <label class="btn btn-outline-primary" for="btnradio2">I'M COOKING IT</label>
     </div><br>
     <label class="form-labels">Dish Name:
-      <input type="text" name="name" autocomplete="off">
+      <input type="text" name="name" autocomplete="off" required>
     </label><br>
     <label class="form-labels">Description:
       <textarea name="description" autocomplete="off" autocapitalize="on"></textarea>
