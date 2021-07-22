@@ -61,7 +61,6 @@ body {
 }
 
 .welcome-info > p {
-    font-family: "Sriracha", cursive;
     font-size: 2vw;
     text-align: left;
     padding: 5vmin 0 0 7vmin;
@@ -76,7 +75,6 @@ body {
 }
 
 .enter-buttons > a {
-    font-family: "Sriracha", cursive;
     font-size: 1.5vw;
     text-decoration: none;
     color: #484d52;

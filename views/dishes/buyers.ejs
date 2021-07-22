@@ -8,18 +8,18 @@
     <% dishes.forEach(dish => { %>
         <div class="buyer-card">
             <a href="/dishes/<%=dish._id%>" class="dish-link">
-                <div class="card-header"><b><%=dish.name%></b></div>
+                <div class="card-header"><%=dish.name%></div>
             </a>    
             <div class="card-content">
                 <% if (dish.description){ %>
                     <p>
-                        <b>Description:</b>
+                        <b>Description:</b><br>
                         <%=dish.description %>
                     </p>
                 <% } %>
 
                 <% if (!dish.owner.equals(user?.profile._id)) { %>
-                    <form action="/dishes/<%=dish._id%>/interest" method="POST">
+                    <form action="/dishes/<%=dish._id%>/interest" method="POST" >
                         <% if (dish.isBuy){ %>
                             <button type="submit" class="card-button">I Can Cook This!</button>
                         <% } else { %>

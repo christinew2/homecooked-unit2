@@ -7,7 +7,10 @@ body {
 }
 
 .buyer-card {
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 8px 8px 0 0 rgb(245, 182, 166);
+    border: 3px solid rgb(214, 214, 214);
 }
 
+.dish-link:hover {
+    color: rgb(223, 143, 143);
+}
