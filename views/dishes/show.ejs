@@ -14,18 +14,18 @@
 <section class="dish-content">
     <% if (dish.description){ %>
         <div>
-            <h3 id="dish-description"><b>Dish Description:</b></h3>
+            <h3 id="dish-description">Dish Description:</h3>
             <p><%=dish.description%></p>
         </div>
     <% } %>
-    <% if (dish.minPrice && dish.maxPrice){ %>
+    <% if (dish.minPrice || dish.maxPrice){ %>
         <div>
-            <h3 id="dish-description"><b>Price Range:</b></h3><br>
+            <h3 id="dish-description">Price Range:</h3>
             <p>$<%=dish.minPrice%> - $<%=dish.maxPrice%></p>
         </div>
     <% } %>
     <% if (dish.whoWants.length > 0){ %>
-        <h3> WHO EXPRESSED INTEREST: </h3>
+        <h3 id="dish-description">Interested Friends:</h3>
         <% dish.whoWants.forEach(wanter => { %>
             <a href="/profiles/<%=wanter._id%>">
                 <img id="user-img" src="<%= wanter.avatar%>" alt="<%= wanter.name %> avatar">
@@ -44,7 +44,7 @@
 
 
     <% if (dish.comments.length > 0){ %>
-        <h3>Comments:</h3>
+        <h3 id="dish-description">Comments:</h3>
         <% dish.comments.forEach(comment => { %>
             <div>
                 <div>
@@ -52,7 +52,7 @@
                         <img id="user-img" src="<%= comment.author.avatar%>" alt="<%= comment.author.name %> avatar">
                     </a>    
                     <span id="dropdown-username"><b>Posted by: </b><%=comment.author.name%></span>
-                    <span><b>on </b><%=comment.createdAt%></span>
+                    <span><b>on </b><%=comment.createdAt.toDateString()%></span>
                 </div>
                 <% if (comment.rating){ %>
                     <p><b>Rating: </b><%=comment.rating%></p>

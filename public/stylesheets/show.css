@@ -33,12 +33,17 @@ main {
 #user-img {
     vertical-align: middle;
     border-radius: 50%;
-    width: 8vmin;
-    align-self: center;
+    width: 6.5vmin;
+    margin: 0.5vmin;
 }
 
 .dish-content {
-    margin: 3vmin 2vmin 2vmin 2vmin;
+    margin: 1vmin 2vmin 2vmin 2vmin;
+}
+
+#dish-description {
+    margin: 3vmin 0 0 0;
+    font-weight: bold;
 }
 
 h1 {
