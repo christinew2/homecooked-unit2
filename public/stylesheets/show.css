@@ -34,7 +34,7 @@ main {
     vertical-align: middle;
     border-radius: 50%;
     width: 6.5vmin;
-    margin: 0.5vmin;
+    margin: 1vmin;
 }
 
 .dish-content {
@@ -46,6 +46,26 @@ main {
     font-weight: bold;
 }
 
-h1 {
-    font-size: 5vmin;
+.comment-cards {
+    display: flex;
+    flex-flow: row wrap;
 }
+
+.comment-container {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgb(250, 199, 89);
+    border-radius: 7px;
+    padding: 0.5vmin;
+    margin: 1vmin;
+}
+
+.comment-content{
+    margin: auto 0 auto 1vmin;
+}
+.comment-content > p{
+    font-size: 1.5vmin;
+    margin: 0;
+}
+
+

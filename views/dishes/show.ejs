@@ -42,24 +42,24 @@
         </form>
     <% } %>
 
-
     <% if (dish.comments.length > 0){ %>
         <h3 id="dish-description">Comments:</h3>
+        <div class="comment-cards">
         <% dish.comments.forEach(comment => { %>
-            <div>
-                <div>
-                    <a href="/profile/<%=dish.owner._id%>">
-                        <img id="user-img" src="<%= comment.author.avatar%>" alt="<%= comment.author.name %> avatar">
-                    </a>    
-                    <span id="dropdown-username"><b>Posted by: </b><%=comment.author.name%></span>
-                    <span><b>on </b><%=comment.createdAt.toDateString()%></span>
+            <div class="comment-container">
+                <a href="/profile/<%=dish.owner._id%>">
+                    <img id="user-img" src="<%= comment.author.avatar%>" alt="<%= comment.author.name %> avatar">
+                </a> 
+                <div class="comment-content">   
+                    <% if (comment.rating){ %>
+                        <p>Rating: <%=comment.rating%></p>
+                    <% } %>
+                    <p><%=comment.content%></p>
+                    <p><%=comment.createdAt.toDateString()%></p>
                 </div>
-                <% if (comment.rating){ %>
-                    <p><b>Rating: </b><%=comment.rating%></p>
-                <% } %>
-                <p><b>Comment: </b><%=comment.content%></p>
             </div>
         <% }) %>
+        </div>
     <% } %>
 </section><br>
 <% if (!dish.owner.equals(user?.profile._id)) { %>
