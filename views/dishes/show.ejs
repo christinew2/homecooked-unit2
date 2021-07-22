@@ -2,12 +2,13 @@
 <%- include('../partials/nav') %>
 <link rel="stylesheet" href="/stylesheets/show.css">
 
-<h1><%=dish.name%></h1>
 
-<div>
-    <img id="user-img" src="<%= dish.owner.avatar%>" alt="<%= dish.owner.name %> avatar">
-    <span id="dropdown-username"><b><%=dish.owner.name%></b><%= dish.isBuy ? " is CRAVING": " is COOKING" %></span>
-</div>
+<main>
+    <h1><%=dish.name%></h1>
+    <div>
+        <img id="user-img" src="<%= dish.owner.avatar%>" alt="<%= dish.owner.name %> avatar">
+        <span id="dropdown-username"><b><%=dish.owner.name%></b><%= dish.isBuy ? " is CRAVING": " is COOKING" %></span>
+    </div>
 
 <section>
     <% if (dish.description){ %>
@@ -91,6 +92,7 @@
         </form>
     </section>
 <% } %>
+</main>
 
 <%- include('../partials/footer') %>
 

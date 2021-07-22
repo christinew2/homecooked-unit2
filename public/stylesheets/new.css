@@ -1,0 +1,60 @@
+body {
+    background: url("/images/newbg.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 80%;
+    overflow: hidden;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5vmin;
+}
+
+.btn {
+    padding: 1vmin 2vmin;
+    font-size: 2vmin;
+    border-radius: 10px;
+}
+
+.btn-outline-primary {
+    background-color: black;
+}
+
+.btn-outline-primary:checked{
+    background-color: white;
+}
+
+
+/* .button {
+    display: inline-block;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1vmin 1vmin;
+    border-radius: 5%;
+}
+
+.button-group {
+    position: relative;
+    display: inline-flex;
+
+}
+
+.radio-button {
+    position: relative;
+    flex: 1 1 auto;
+}
+
+.button:checked,
+.button:focus,
+.button:active,
+.button:hover{
+    z-index: 1;
+    background-color: blue;
+}
+
+input[type=radio]{
+    display: none;
+} */
