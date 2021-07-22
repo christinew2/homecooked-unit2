@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/stylesheets/new.css">
 
 <main>
-  <h1 class="page-title">New Dish Page!</h1>
+  <h1 class="page-title">New Dish</h1>
   <form action="/dishes" method="POST" class="new-dish-form" role="form">
     <input type="text" name="isActive" value="true" hidden>
     <input type="text" name="owner" value="true" hidden>
@@ -21,16 +21,19 @@
       <input type="radio" class="btn-check" name="isBuy" id="btnradio2" autocomplete="off" value="false">
       <label class="btn btn-outline-primary" for="btnradio2">I'M COOKING IT</label>
     </div><br>
-    <label class="form-labels">Dish Name:
+
+
+    <label class="new-dish-content">Dish Name:
       <input type="text" name="name" autocomplete="off" required>
     </label><br>
-    <label class="form-labels">Description:
+    <label class="new-dish-content">Description:
       <textarea name="description" autocomplete="off" autocapitalize="on"></textarea>
     </label><br>
-    <label class="form-labels">Price Range:
-      <input type="number" name="minPrice" placeholder="min"> 
-        -
-      <input type="number" name="maxPrice" placeholder="max">
+    <label id="price-range-container">
+      <p>Price Range:</p>
+      <input class="price-input" type="number" name="minPrice" placeholder="min"> 
+      <p> - </p>
+      <input class="price-input" type="number" name="maxPrice" placeholder="max">
     </label><br>
     <button type="submit">Add Dish</button>
   </form>
