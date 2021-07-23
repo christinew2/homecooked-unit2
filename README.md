@@ -24,6 +24,7 @@ In order to add your own dishes or interact with existing postings, the user wil
 | Add a Dish         | Create a post for a dish you are craving or can cook for others. You have the additional options of adding a description and price range.  |
 | Edit this Dish     | Edit the dish you have posted.                                                                                                             |
 | Delete this Dish   | Delete the dish you have posted.                                                                                                           |
+| Dish Details  | View details about a specific dish. Note: this page contains a scroll functionality.                                                                                               |
 | "I Can Cook This!" | Express your interest in cooking a dish that is craved by another user.                                                                    |
 | "Let Me Eat This!" | Express your interest in purchasing a dish cooked by another user.                                                                         |
 | Commenting         | Post a comment on another dish.                                                                                                            |
