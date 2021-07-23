@@ -47,13 +47,13 @@
                 <img id="user-img" src="<%= wanter.avatar%>" alt="<%= wanter.name %> avatar">
             </a>    
         <% }) %>
-    <% } %>
+    <% } %><br>
     <% if (dish.owner.equals(user?.profile._id)) { %>
-        <a href="/dishes/<%=dish._id%>/edit">Edit This Dish!</a>
+        <a id="edit-dish-a" href="/dishes/<%=dish._id%>/edit">Edit this Dish!</a>
 
         <form action="/dishes/<%=dish._id%>?_method=DELETE" method="POST">
             <button type="submit">
-                DELETE THIS DISH
+                Delete this Dish!
             </button>
         </form>
     <% } %>

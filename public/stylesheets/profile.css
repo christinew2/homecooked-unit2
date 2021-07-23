@@ -1,0 +1,72 @@
+body {
+    background: url("/images/profilepage.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 80%;
+    overflow: hidden;
+
+}
+
+main {
+    display: flex;
+    flex-direction:row;
+    align-content: center;
+    justify-content: center;
+}
+
+#img-container {
+    
+    border-radius: 8px;
+    margin: 3vmin 5vmin 0 0;
+    background-color: #fffdfb;
+    box-shadow: 8px 8px 0 0 rgb(250, 212, 142);
+    border: 3px solid rgb(214, 214, 214);
+}
+
+#user-img {
+    vertical-align: middle;
+    border-radius: 50%;
+    width: 25vmin;
+    margin: 5vmin;
+    border: 0.5vmin solid rgb(255, 224, 167);
+}
+
+
+.posts-card {
+    border-radius: 8px;
+    margin: 3vmin 5vmin 0 0;
+    background-color: #fffdfb;
+    border: 3px solid rgb(214, 214, 214);
+}
+
+#buyers-card {
+    box-shadow: 8px 8px 0 0 rgb(245, 182, 166);
+}
+
+#buyers-link:hover{
+    color: rgb(245, 182, 166);
+}
+
+#sellers-card {
+    box-shadow: 8px 8px 0 0 rgb(195, 219, 250);
+}
+
+#sellers-link:hover{
+    color: rgb(127, 177, 241);
+}
+.posts-card > h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 1vmin;
+    font-size: 2.5vmin;
+    background-color: rgba(241, 241, 241, 0.692);
+}
+
+.dish-card {
+    padding: 5px 0 5px 5px;
+}
+
+.dish-link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5vmin;
+   
+}

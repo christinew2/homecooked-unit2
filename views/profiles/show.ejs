@@ -1,37 +1,46 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/profile.css">
 
 
-<h1><%= isSelf ? self.name : profile.name %>'s Profile!</h1>
+<h1 class="page-title">Welcome to <%= isSelf ? self.name : profile.name %>'s Profile!</h1>
+
+<main>
 <% if (profile.avatar) { %>
-    <div>
+    <div id="img-container">
         <img 
+        id="user-img"
         src="<%= profile.avatar %>" 
         alt="<%= profile.name %> avatar"
         >
     </div>
 <% } %>
-
-<h2>Cravings Posts: </h2><br>
+<div>
+    <div class="posts-card" id="buyers-card">
+<h2>All of <%=isSelf ? "My": `${profile.name}'s`%> Cravings </h2>
 <% profile.dishes.forEach(dish => { %>
     <% if (dish.isBuy){ %>
         <div class="dish-card">
-            <a href="/dishes/<%=dish._id%>" class="dish-link">
+            <a href="/dishes/<%=dish._id%>" class="dish-link" id="buyers-link">
                 <div class="dish-card-name"><b><%=dish.name%></b></div>
             </a> 
         </div>
     <% } %>
 <% }) %>
+</div>
 
-<h2>Cooking Posts: </h2><br>
+<div class="posts-card" id="sellers-card">
+<h2>All of <%=isSelf ? "My": `${profile.name}'s`%> Homecooked Meals </h2>
 <% profile.dishes.forEach(dish => { %>
     <% if (!dish.isBuy){ %>
         <div class="dish-card">
-            <a href="/dishes/<%=dish._id%>" class="dish-link">
+            <a href="/dishes/<%=dish._id%>" class="dish-link" id="sellers-link">
                 <div class="dish-card-name"><b><%=dish.name%></b></div>
             </a> 
         </div>
     <% } %>
 <% }) %>
-
+</div>
+</div>
+</main>
 <%- include('../partials/footer') %>

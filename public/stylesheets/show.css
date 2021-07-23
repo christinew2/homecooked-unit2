@@ -46,7 +46,7 @@ main {
 
 .dish-content {
     margin: 1vmin 2vmin 2vmin 2vmin;
-    height: 45vmin;
+    height: 50vmin;
     overflow-y: auto;
 }
 
@@ -85,6 +85,17 @@ main {
     flex-direction: column;
     align-items: center;
     font-size: 2vmin;
+}
+
+#edit-dish-a {
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    color: black;
+    border: 3px solid rgb(247, 223, 173);
+    border-radius: 7px;
+    margin: 1vmin 0 0 0;
+    padding: 1px 6px 1px 6px;
+    box-shadow: 1px 1px rgb(247, 223, 173);
 }
 
 button {
