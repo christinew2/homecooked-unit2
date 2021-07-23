@@ -163,7 +163,8 @@ function updateInterest(req,res){
             })
         } else{
             // FIGURE OUT WHAT ERROR OR REDIRECT TO PUT HERE
-            console.log("ALREADY IN WANTS")    
+            console.log("ALREADY IN WANTS")
+            res.redirect(`/dishes/${dish._id}`)    
         }
     })
 }
