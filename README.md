@@ -35,6 +35,7 @@ Future updates of this application will allow users to safely contact other user
 ![View of all user "Cravings" posts](public/images/readme/cravings.png)
 ![New Dish page](public/images/readme/new.png)
 ![Example of a sample dish's details page](public/images/readme/show.png)
+![Profile page](public/images/readme/profile.png)
 #
 ## Features
 - MVC architecture
