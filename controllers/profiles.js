@@ -5,7 +5,6 @@ export {
 }
 
 function show(req,res){
-   
    Profile.findById(req.params.id)
    .populate("dishes")
    .then(profile => {

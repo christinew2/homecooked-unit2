@@ -51,9 +51,6 @@ function newDish(req,res){
 function create(req,res){
     req.body.owner = req.user.profile
     const dish = new Dish(req.body)
-
-
-    // also need to save dish to user profile
     Profile.findById(req.user.profile._id)
     .then(profile => {
         profile.dishes.push(dish)
@@ -149,7 +146,6 @@ function deleteDish(req,res){
 function updateInterest(req,res){
     Dish.findById(req.params.id, function(err, dish){
         let isInArray = dish.whoWants.some(wanter => {
-            // UNDERSTAND WHAT ARRAY.SOME DOES!!
             return wanter.equals(req.user.profile._id)
         })
         if (!isInArray){
@@ -162,7 +158,6 @@ function updateInterest(req,res){
                 }
             })
         } else{
-            // FIGURE OUT WHAT ERROR OR REDIRECT TO PUT HERE
             console.log("ALREADY IN WANTS")
             res.redirect(`/dishes/${dish._id}`)    
         }

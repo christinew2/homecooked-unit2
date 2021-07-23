@@ -4,7 +4,6 @@ export {
   Profile
 }
 
-
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,

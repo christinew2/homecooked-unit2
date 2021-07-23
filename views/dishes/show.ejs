@@ -5,102 +5,102 @@
 <link rel="stylesheet" href="/stylesheets/show.css">
 
 
-<main>
-    
+<main>  
     <div id="page-start">
         <a id="user-link" href="/profiles/<%=dish.owner._id%>"><b><%=dish.owner.name%></b></a>
         <%= dish.isBuy ? " is CRAVING": " is COOKING" %></p>
     </div>
     <h1 id="dish-name" class="page-title"><b><%=dish.name%></b></h1>
 
-<div class="dish-content">
-    <% if (dish.description){ %>
-        <div>
-            <h3 id="dish-description">Dish Description:</h3>
-            <p><%=dish.description%></p>
-        </div>
-    <% } %>
-    <% if (dish.minPrice || dish.maxPrice){ %>
-        <div>
-            <h3 id="dish-description">Price Range:</h3>
-            <p>$<%=dish.minPrice%> - $<%=dish.maxPrice%></p>
-        </div>
-    <% } %>
-    <% if (!dish.owner.equals(user?.profile._id)) { %>
-        <% let isInArray = dish.whoWants.some(wanter => { %>
-           <% return wanter.equals(user.profile._id) %>
-        <% }) %>
-        <% if (!isInArray){ %>
-            <form action="/dishes/<%=dish._id%>/interest" method="POST">
-                <% if (dish.isBuy){ %>
-                    <button type="submit" class="card-button">I Can Cook This!</button>
-                <% } else { %>
-                    <button type="submit" class="card-button">Let Me Eat This!</button>
-                <% } %>
-            </form>
-        <% } %>    
-    <% } %>  
-    <% if (dish.whoWants.length > 0){ %>
-        <h3 id="dish-description">Interested Friends:</h3>
-        <% dish.whoWants.forEach(wanter => { %>
-            <a href="/profiles/<%=wanter._id%>">
-                <img id="user-img" src="<%= wanter.avatar%>" alt="<%= wanter.name %> avatar">
-            </a>    
-        <% }) %>
-    <% } %><br>
-    <% if (dish.owner.equals(user?.profile._id)) { %>
-        <a id="edit-dish-a" href="/dishes/<%=dish._id%>/edit">Edit this Dish!</a>
-
-        <form action="/dishes/<%=dish._id%>?_method=DELETE" method="POST">
-            <button type="submit">
-                Delete this Dish!
-            </button>
-        </form>
-    <% } %>
-
-    <% if (dish.comments.length > 0){ %>
-        <h3 id="dish-description">Comments:</h3>
-        <div class="comment-cards">
-        <% dish.comments.forEach(comment => { %>
-            <div class="comment-container">
-                <a href="/profile/<%=dish.owner._id%>">
-                    <img id="user-img" src="<%= comment.author.avatar%>" alt="<%= comment.author.name %> avatar">
-                </a> 
-                <div class="comment-content">   
-                    <% if (comment.rating){ %>
-                        <p>Rating: <%=comment.rating%></p>
-                    <% } %>
-                    <p><%=comment.content%></p>
-                    <p><%=comment.createdAt.toDateString()%></p>
-                </div>
+    <div class="dish-content">
+        <% if (dish.description){ %>
+            <div>
+                <h3 id="dish-description">Dish Description:</h3>
+                <p><%=dish.description%></p>
             </div>
-        <% }) %>
-        </div>
-    <% } %>
+        <% } %>
 
-<% if (!dish.owner.equals(user?.profile._id)) { %>
-    <section id="comment-form-container">
-        <h3 id="dish-description">Add a Comment</h3>
-        <form 
-            id="add-comment-form"
-            action="/dishes/<%= dish._id %>/comments"
-            method="POST"
-        >
-            <label for="rating-select">Rating:</label>
-            <select name="rating" id="rating-select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5" selected>5</option>
-            </select>
-            <label for="review-text">Comment:</label>
-            <textarea name="content" id="review-text"></textarea>
-            <button type="submit">Add Comment</button>
-        </form>
-    </section>
-<% } %>
+        <% if (dish.minPrice || dish.maxPrice){ %>
+            <div>
+                <h3 id="dish-description">Price Range:</h3>
+                <p>$<%=dish.minPrice%> - $<%=dish.maxPrice%></p>
+            </div>
+        <% } %>
 
+        <% if (!dish.owner.equals(user?.profile._id)) { %>
+            <% let isInArray = dish.whoWants.some(wanter => { %>
+                <% return wanter.equals(user.profile._id) %>
+            <% }) %>
+            <% if (!isInArray){ %>
+                <form action="/dishes/<%=dish._id%>/interest" method="POST">
+                    <% if (dish.isBuy){ %>
+                        <button type="submit" class="card-button">I Can Cook This!</button>
+                    <% } else { %>
+                        <button type="submit" class="card-button">Let Me Eat This!</button>
+                    <% } %>
+                </form>
+            <% } %>    
+        <% } %>  
+
+        <% if (dish.whoWants.length > 0){ %>
+            <h3 id="dish-description">Interested Friends:</h3>
+            <% dish.whoWants.forEach(wanter => { %>
+                <a href="/profiles/<%=wanter._id%>">
+                    <img id="user-img" src="<%= wanter.avatar%>" alt="<%= wanter.name %> avatar">
+                </a>    
+            <% }) %>
+        <% } %><br>
+
+        <% if (dish.owner.equals(user?.profile._id)) { %>
+            <a id="edit-dish-a" href="/dishes/<%=dish._id%>/edit">Edit this Dish!</a>
+            <form action="/dishes/<%=dish._id%>?_method=DELETE" method="POST">
+                <button type="submit">Delete this Dish!</button>
+            </form>
+        <% } %>
+
+        <% if (dish.comments.length > 0){ %>
+            <h3 id="dish-description">Comments:</h3>
+            <div class="comment-cards">
+                <% dish.comments.forEach(comment => { %>
+                    <div class="comment-container">
+                        <a href="/profile/<%=dish.owner._id%>">
+                            <img id="user-img" src="<%= comment.author.avatar%>" alt="<%= comment.author.name %> avatar">
+                        </a> 
+                        <div class="comment-content">   
+                            <% if (comment.rating){ %>
+                                <p>Rating: <%=comment.rating%></p>
+                            <% } %>
+                            <p><%=comment.content%></p>
+                            <p><%=comment.createdAt.toDateString()%></p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>
+
+        <% if (!dish.owner.equals(user?.profile._id)) { %>
+            <section id="comment-form-container">
+                <h3 id="dish-description">Add a Comment</h3>
+                <form 
+                    id="add-comment-form"
+                    action="/dishes/<%= dish._id %>/comments"
+                    method="POST"
+                >
+                    <label for="rating-select">Rating:</label>
+                    <select name="rating" id="rating-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5" selected>5</option>
+                    </select>
+                    <label for="review-text">Comment:</label>
+                    <textarea name="content" id="review-text"></textarea>
+                    <button type="submit">Add Comment</button>
+                </form>
+            </section>
+        <% } %>
+    </div>
 </main>
 
 <%- include('../partials/footer') %>

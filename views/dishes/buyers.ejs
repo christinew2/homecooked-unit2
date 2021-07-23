@@ -12,12 +12,8 @@
             </a>    
             <div class="card-content">
                 <% if (dish.description){ %>
-                    <p>
-                        <b>Description:</b><br>
-                        <%=dish.description %>
-                    </p>
+                    <p><b>Description:</b><br><%=dish.description %></p>
                 <% } %>
-
                 <% if (!dish.owner.equals(user?.profile._id)) { %>
                     <form action="/dishes/<%=dish._id%>/interest" method="POST" >
                         <% if (dish.isBuy){ %>
@@ -27,7 +23,6 @@
                         <% } %>
                     </form>
                 <% } %>
-
             </div>
         </div>
     <% }) %> 

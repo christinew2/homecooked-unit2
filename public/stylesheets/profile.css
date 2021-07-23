@@ -3,7 +3,6 @@ body {
     background-size: cover;
     height: 80%;
     overflow: hidden;
-
 }
 
 main {
@@ -13,29 +12,27 @@ main {
     justify-content: center;
 }
 
-#img-container {
-    
-    border-radius: 8px;
-    margin: 3vmin 5vmin 0 0;
+#img-container {  
     background-color: #fffdfb;
-    box-shadow: 8px 8px 0 0 rgb(250, 212, 142);
     border: 3px solid rgb(214, 214, 214);
+    border-radius: 8px;
+    box-shadow: 8px 8px 0 0 rgb(250, 212, 142);
+    margin: 3vmin 5vmin 0 0;
 }
 
 #user-img {
     vertical-align: middle;
+    border: 0.5vmin solid rgb(255, 224, 167);
     border-radius: 50%;
     width: 25vmin;
     margin: 5vmin;
-    border: 0.5vmin solid rgb(255, 224, 167);
 }
 
-
 .posts-card {
-    border-radius: 8px;
-    margin: 3vmin 5vmin 0 0;
     background-color: #fffdfb;
     border: 3px solid rgb(214, 214, 214);
+    border-radius: 8px;
+    margin: 3vmin 5vmin 0 0;
 }
 
 #buyers-card {
@@ -53,11 +50,12 @@ main {
 #sellers-link:hover{
     color: rgb(127, 177, 241);
 }
+
 .posts-card > h2 {
     font-family: 'Source Sans Pro', sans-serif;
-    padding: 1vmin;
     font-size: 2.5vmin;
     background-color: rgba(241, 241, 241, 0.692);
+    padding: 1vmin;
 }
 
 .dish-card {
@@ -65,8 +63,7 @@ main {
 }
 
 .dish-link {
-    text-decoration: none;
-    color: black;
     font-size: 1.5vmin;
-   
+    color: black;
+    text-decoration: none;
 }

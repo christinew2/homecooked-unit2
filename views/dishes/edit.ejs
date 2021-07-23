@@ -5,12 +5,10 @@
 
 <h1 class="page-title"><b>Edit the Dish!</b></h1>
 <form action="/dishes/<%=dish._id%>?_method=PUT" method="POST" class="new-dish-form">
-    <label class="new-dish-content">
-        Dish Name: 
+    <label class="new-dish-content">Dish Name: 
         <input type="text" name="name" value="<%=dish.name%>" autocomplete="off">
     </label><br>
-    <label class="new-dish-content">
-        Description:
+    <label class="new-dish-content">Description:
         <textarea name="description" autocomplete="off"><%=dish.description%></textarea>
     </label><br>
     <label class="new-dish-content">Price Range:

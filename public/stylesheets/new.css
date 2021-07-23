@@ -13,9 +13,9 @@ form {
 }
 
 .btn {
-    padding: 1vmin 1vmin;
     font-size: 1.75vmin;
     border-radius: 10px;
+    padding: 1vmin 1vmin;
 }
 
 .btn-group {
@@ -23,7 +23,11 @@ form {
     margin: 2vmin 0 0 0;
 }
 
-.btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+.btn-check:active+.btn-outline-primary, 
+.btn-check:checked+.btn-outline-primary, 
+.btn-outline-primary.active, 
+.btn-outline-primary.dropdown-toggle.show, 
+.btn-outline-primary:active {
     color: rgb(255, 255, 255);
     background-color: rgb(236, 177, 47);
     border-color: rgb(236, 177, 47);
@@ -50,7 +54,6 @@ textarea {
     height: 200px;
 }
 
-
 #price-range-container {
     display: flex;
     flex-direction: row;
@@ -68,44 +71,3 @@ button {
     box-shadow: 1px 1px rgb(247, 223, 173);
     border-radius: 7px;
 }
-
-/* .btn-outline-primary {
-    background-color: black;
-}
-
-.btn-outline-primary:checked{
-    background-color: white;
-} */
-
-
-/* .button {
-    display: inline-block;
-    background-color: white;
-    text-align: center;
-    vertical-align: middle;
-    padding: 1vmin 1vmin;
-    border-radius: 5%;
-}
-
-.button-group {
-    position: relative;
-    display: inline-flex;
-
-}
-
-.radio-button {
-    position: relative;
-    flex: 1 1 auto;
-}
-
-.button:checked,
-.button:focus,
-.button:active,
-.button:hover{
-    z-index: 1;
-    background-color: blue;
-}
-
-input[type=radio]{
-    display: none;
-} */

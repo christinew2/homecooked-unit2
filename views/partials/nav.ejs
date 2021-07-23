@@ -1,17 +1,17 @@
-  <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
-  <% } %>
+<% if (!user) { %>
+  <link rel="stylesheet" href="/stylesheets/siwg.css">
+<% } %>
 <link rel="stylesheet" href="/stylesheets/nav.css">
 </head>
+
 <body>
   <nav>
     <div id="left-nav">
-      
       <a href="/">
         <img id="home-img" src="/images/logo.png"><span id="header-home"> Home</span><span id="header-cooked">Cooked</span>
       </a>
-
     </div>
+
     <div id="right-nav"> 
       <a class="nav-tab" href="/dishes/buyers">I'm Cravin'</a>
       <a class="nav-tab" href="/dishes/sellers">I'm Cookin'</a>
@@ -28,7 +28,6 @@
             <a class="dropdown-item" href="/auth/logout">Logout</a>
           <div>
         </div>
-    
       <% } else { %>
         <a href="/auth/google" class="siwg-link">
           <button type="submit" class="siwg">

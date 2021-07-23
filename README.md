@@ -53,6 +53,8 @@ Future updates of this application will allow users to safely contact other user
 - MongoDB
 - Mongoose
 - Google OAuth
+- Flexbox
+- Grid
 
 #
 ## IceBox Features
@@ -64,6 +66,8 @@ Future updates of this application will allow users to safely contact other user
 - [ ] Notification/messaging system to allow users to contact other users who had expressed interest in their dish
 - [ ] Ability to save "favorite" profiles
 - [ ] Implement Maps API to attach broad user locations to allow users to find dishes nearby
+- [ ] Implement responsive design
+  
 #
 ### Original Wireframes + Entity Relationship Diagram (ERD)
 ![Original Wireframes](public/images/readme/wireframes.png)

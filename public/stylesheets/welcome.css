@@ -3,7 +3,6 @@ body {
     background-size: cover;
     height: 100%;
     overflow: hidden;
-
 }
 
 .grid-container {
@@ -11,15 +10,13 @@ body {
     grid-template-columns: [col0] 10% [col1] 25% [col2] 10% [col3] 10% [col4] 20% [col5] 15% [col6] 15%;
     grid-template-rows: [row0] 20% [row1] 15% [row2] 25% [row3] 20% [row4] 20%;
     gap: 0px 0px;
-    /* background-color: #FFF8EC; */
     height: 100vh;
-
 }
 
 .welcome-logo {
     grid-area: row1 / col1 / row4 / col3;
-
 }
+
 .welcome-logo > img { 
     max-width: 100%; 
     height: auto; 
@@ -44,12 +41,12 @@ body {
     text-align: center;
     text-shadow:0.3vmin 0.3vmin #788996;
     padding: 0 0 0 17vmin;
-
 }
 
 #header-home {
     color: #fc8d94;
 }
+
 #header-cooked {
     color: #9fcaf4;
 }
@@ -61,10 +58,10 @@ body {
 }
 
 .welcome-info > p {
+    color: #484d52;
     font-size: 2vw;
     text-align: left;
     padding: 5vmin 0 0 7vmin;
-    color: #484d52;
 }
 
 .enter-buttons {
@@ -76,13 +73,12 @@ body {
 
 .enter-buttons > a {
     font-size: 1.5vw;
-    text-decoration: none;
     color: #484d52;
+    text-decoration: none;
     background-color: #ffe46a; 
     border: 1vmin solid #ffe46a;
     border-radius: 10%;
     margin: 0 1vmin;
-    
 }
 
 .enter-buttons > a:hover {

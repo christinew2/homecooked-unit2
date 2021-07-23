@@ -5,23 +5,13 @@
 <main>
   <h1 class="page-title"><b>New Dish</b></h1>
   <form action="/dishes" method="POST" class="new-dish-form" role="form">
-    <input type="text" name="isActive" value="true" hidden>
-    <input type="text" name="owner" value="true" hidden>
-    <!-- <div class="button-group" role="button">
-      <input type="radio" class="radio-button" id="radio-button1" autocomplete="off" checked>
-      <label class="button" for="radio-button1">I'M CRAVING IT</label>
-
-      <input type="radio" class="radio-button" id="radio-button2" autocomplete="off">
-      <label class="button" for="radio-button2">I'M COOKING IT</label>
-    </div> -->
+    
     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
       <input type="radio" class="btn-check" name="isBuy" id="btnradio1" autocomplete="off" checked value="true">
       <label class="btn btn-outline-primary" for="btnradio1">I'M CRAVING IT</label>
-
       <input type="radio" class="btn-check" name="isBuy" id="btnradio2" autocomplete="off" value="false">
       <label class="btn btn-outline-primary" for="btnradio2">I'M COOKING IT</label>
     </div><br>
-
 
     <label class="new-dish-content">Dish Name:
       <input type="text" name="name" autocomplete="off" required>
@@ -29,6 +19,8 @@
     <label class="new-dish-content">Description:
       <textarea name="description" autocomplete="off" autocapitalize="on"></textarea>
     </label><br>
+    <input type="text" name="isActive" value="true" hidden>
+    <input type="text" name="owner" value="true" hidden>
     <label id="price-range-container">
       <p>Price Range:</p>
       <input class="price-input" type="number" name="minPrice" placeholder="min"> 

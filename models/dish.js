@@ -5,7 +5,6 @@ export {
     Dish
 }
 
-
 const commentSchema = new Schema({
     rating: {
         type: Number,
