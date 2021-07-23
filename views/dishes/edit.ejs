@@ -1,22 +1,22 @@
 <%- include("../partials/html-head") %> 
 <%- include("../partials/nav") %> 
-<link rel="stylesheet" href="/stylesheets/newDishForm.css">
+<link rel="stylesheet" href="/stylesheets/new.css">
 
 
-<h1 class="page-title">Edit the Dish!</h1>
-<form action="/dishes/<%=dish._id%>?_method=PUT" method="POST">
-    <label class="form-labels">
+<h1 class="page-title"><b>Edit the Dish!</b></h1>
+<form action="/dishes/<%=dish._id%>?_method=PUT" method="POST" class="new-dish-form">
+    <label class="new-dish-content">
         Dish Name: 
         <input type="text" name="name" value="<%=dish.name%>" autocomplete="off">
     </label><br>
-    <label class="form-labels">
+    <label class="new-dish-content">
         Description:
         <textarea name="description" autocomplete="off"><%=dish.description%></textarea>
     </label><br>
-    <label class="form-labels">Price Range:
-        <input type="number" name="minPrice" value="<%=dish.minPrice%>"> 
+    <label class="new-dish-content">Price Range:
+        <input type="number" name="minPrice" class="price-input" value="<%=dish.minPrice%>"> 
           -
-        <input type="number" name="maxPrice" value="<%=dish.maxPrice%>">
+        <input type="number" name="maxPrice" class="price-input" value="<%=dish.maxPrice%>">
     </label><br>
     <button type="submit">Edit This Dish</button>
 </form>
